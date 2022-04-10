@@ -2,6 +2,7 @@ import time
 import pyupbit
 import datetime
 import schedule
+import requests
 from fbprophet import Prophet
 
 myToken = 'xoxb-3369599391971-3393361783648-IKu7bM51WerOcktzHTgxxN5A'
