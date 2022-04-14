@@ -70,7 +70,7 @@ while True:
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-JST", 0.1)
             current_price = get_current_price("KRW-JST")
-            if target_price < current_price < target_price * 1.01 and current_price < predicted_close_price * 1.03:
+            if target_price < current_price < target_price * 1.01 and current_price < predicted_close_price * 1.02:
                 krw = get_balance("KRW")
                 if krw > 5000:
                     upbit.buy_market_order("KRW-JST", krw*0.9995)
