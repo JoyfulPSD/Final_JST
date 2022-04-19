@@ -32,14 +32,14 @@ def predict_price(ticker):
         closeDf = forecast[forecast['ds'] == data.iloc[-1]['ds'].replace(hour=9)]
     closeValue = closeDf['yhat'].values[0]
     predicted_close_price = closeValue
-predict_price("KRW-JST")
-schedule.every().hour.do(lambda: predict_price("KRW-JST"))
-closeValue = predict_price("KRW-JST")
+predict_price('KRW-JST')
+schedule.every().hour.do(lambda: predict_price('KRW-JST'))
+closeValue = predict_price('KRW-JST')
 
 # 시작 메세지 슬랙 전송
-post_message(myToken,"#jst-coin", "autotrade start")
+post_message(myToken,'#jst-coin', 'autotrade start')
 def job():
-    post_message(myToken,"#jst-coin", closeValue)
+    post_message(myToken,'#jst-coin', closeValue)
 
 schedule.every(5).seconds.do(job)
 
