@@ -70,7 +70,7 @@ while True:
         # open_price_ada = get_open_price("KRW-ADA")
     
 
-        if start_time <= now < end_time - datetime.timedelta(seconds=10):
+        if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price_btc = get_target_price("KRW-BTC", 0.5)
             target_price_eth = get_target_price("KRW-ETH", 0.5)
             target_price_xrp = get_target_price("KRW-XRP", 0.5)
